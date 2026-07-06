@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP TEAM 選手紹介 | DANGE UNITED</title>
+  <meta name="description" content="DANGE UNITED トップチームの選手一覧ページです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pos-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 3px;
+      min-width: 36px;
+      text-align: center;
+    }
+    .pos-GK { background: #1a7a1a; color: #fff; }
+    .pos-DF { background: #003399; color: #fff; }
+    .pos-MF { background: #CC6600; color: #fff; }
+    .pos-FW { background: #D4A800; color: #1a1a1a; }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .pos-filter {
+      padding: 8px 22px;
+      border-radius: 20px;
+      border: 2px solid var(--gray-border);
+      background: var(--white);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--black);
+    }
+    .pos-filter:hover { border-color: #F5C400; color: #D4A800; }
+    .pos-filter.active { background: #F5C400; border-color: #F5C400; color: #1a1a1a; }
+
+    .player-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .player-table thead tr {
+      background: var(--black);
+      color: var(--white);
+    }
+    .player-table th {
+      padding: 14px 20px;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .player-table tbody tr {
+      border-bottom: 1px solid var(--gray-border);
+      transition: var(--transition);
+    }
+    .player-table tbody tr:hover { background: #FFFBEA; }
+    .player-table td { padding: 14px 20px; vertical-align: middle; }
+
+    .num-cell {
+      font-family: var(--font-en);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #D4A800;
+      text-align: center;
+      width: 90px;
+      white-space: nowrap;
+    }
+    .name-cell { font-weight: 700; font-size: 1rem; }
+    .pos-cell  { text-align: center; padding-left: 10px !important; padding-right: 10px !important; width: 120px; }
+    .birth-cell { color: #555; font-size: 0.88rem; }
+    .age-cell { text-align: center; font-weight: 700; }
+    .birth-cell, .age-cell { padding-left: 10px !important; padding-right: 10px !important; }
+    th:nth-child(4), td.birth-cell { width: 150px; }
+    th:nth-child(5), td.age-cell   { width: 70px; }
+
+    @media (max-width: 640px) {
+      .player-table thead { display: none; }
+      .player-table tbody tr {
+        display: grid;
+        grid-template-columns: 56px 1fr auto;
+        grid-template-rows: auto auto;
+        padding: 12px 16px;
+        gap: 2px 10px;
+        align-items: center;
+      }
+      .player-table td { padding: 0; border: none; }
+      .num-cell  { grid-row: 1 / 3; font-size: 1.8rem; }
+      .name-cell { grid-column: 2; }
+      .pos-cell  { grid-column: 3; grid-row: 1; text-align: right; }
+      .birth-cell{ grid-column: 2; font-size: 0.78rem; color: #888; }
+      .age-cell  { grid-column: 3; grid-row: 2; text-align: right; font-size: 0.78rem; color: #888; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><img src="images/emblem.png" alt="DANGE UNITED エンブレム"></div>
+      <div class="logo-text">
+        <span class="logo-name">DANGE UNITED</span>
+        <span class="logo-sub">Football Club</span>
+      </div>
+    </a>
+    <nav class="nav-pc">
+      <a href="index.html">HOME</a>
+      <a href="topteam-about.html">TOP ABOUT</a>
+      <a href="topteam-players.html" style="color:#F5C400;">TOP PLAYERS</a>
+      <a href="about.html">O-40 ABOUT</a>
+      <a href="players.html">O-40 PLAYERS</a>
+      <a href="sponsor.html">PARTNER</a>
+    </nav>
+    <button class="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="nav-mobile">
+  <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+  <a href="about.html"><i class="fas fa-users"></i> O-40 ABOUT</a>
+  <a href="players.html"><i class="fas fa-user"></i> O-40 PLAYERS</a>
+  <a href="topteam-about.html"><i class="fas fa-shield-alt"></i> TOP TEAM ABOUT</a>
+  <a href="topteam-players.html" style="color:#F5C400;"><i class="fas fa-futbol"></i> TOP TEAM PLAYERS</a>
+  <a href="sponsor.html"><i class="fas fa-handshake"></i> PARTNER パートナー</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> CONTACT お問い合わせ</a>
+</nav>
+
+<!-- ページヘッダー -->
+<div class="page-header">
+  <div class="page-header-bg" style="background-image:url('images/photo-top4.jpg');"></div>
+  <div class="page-header-inner">
+    <span class="page-header-tag" style="background:#F5C400; color:#1a1a1a;">TOP TEAM</span>
+    <h1 class="page-header-title">TEAM <span style="color:#F5C400;">PLAYERS</span></h1>
+    <nav class="breadcrumb">
+      <a href="index.html">HOME</a>
+      <span class="sep">›</span>
+      <span class="current">TOP TEAM 選手紹介</span>
+    </nav>
+  </div>
+</div>
+
+<!-- 選手一覧 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="section-tag" style="background:#F5C400; color:#1a1a1a;">SQUAD</span>
+      <h2 class="section-title">選手 <span style="color:#D4A800;">一覧</span></h2>
+      <div class="divider" style="background:#F5C400;"></div>
+      <p class="section-desc">DANGE UNITED トップチームのメンバーです。</p>
+    </div>
+
+    <!-- フィルターバー -->
+    <div class="filter-bar fade-in">
+      <button class="pos-filter active" data-pos="ALL">ALL</button>
+      <button class="pos-filter" data-pos="GK">GK</button>
+      <button class="pos-filter" data-pos="DF">DF</button>
+      <button class="pos-filter" data-pos="MF">MF</button>
+      <button class="pos-filter" data-pos="FW">FW</button>
+    </div>
+
+    <!-- 選手テーブル -->
+    <div style="overflow-x:auto;" class="fade-in">
+      <table class="player-table" id="playerTable">
+        <thead>
+          <tr>
+            <th style="text-align:center;">NO.</th>
+            <th>選手名</th>
+            <th style="text-align:center;">POS</th>
+            <th>生年月日</th>
+            <th style="text-align:center;">年齢</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-pos="GK">
+            <td class="num-cell">1</td>
+            <td class="name-cell">砂森　広樹</td>
+            <td class="pos-cell"><span class="pos-badge pos-GK">GK</span></td>
+            <td class="birth-cell">1992/7/9</td>
+            <td class="age-cell">33</td>
+          </tr>
+          <tr data-pos="DF">
+            <td class="num-cell">2</td>
+            <td class="name-cell">葛原　颯太</td>
+            <td class="pos-cell"><span class="pos-badge pos-DF">DF</span></td>
+            <td class="birth-cell">2005/9/4</td>
+            <td class="age-cell">20</td>
+          </tr>
+          <tr data-pos="DF">
+            <td class="num-cell">3</td>
+            <td class="name-cell">中野　宇待</td>
+            <td class="pos-cell"><span class="pos-badge pos-DF">DF</span></td>
+            <td class="birth-cell">2006/7/3</td>
+            <td class="age-cell">19</td>
+          </tr>
+          <tr data-pos="DF">
+            <td class="num-cell">4</td>
+            <td class="name-cell">高　兌範</td>
+            <td class="pos-cell"><span class="pos-badge pos-DF">DF</span></td>
+            <td class="birth-cell">1994/1/22</td>
+            <td class="age-cell">32</td>
+          </tr>
+          <tr data-pos="DF">
+            <td class="num-cell">6</td>
+            <td class="name-cell">趙　在成</td>
+            <td class="pos-cell"><span class="pos-badge pos-DF">DF</span></td>
+            <td class="birth-cell">1988/1/9</td>
+            <td class="age-cell">38</td>
+          </tr>
+          <tr data-pos="MF">
+            <td class="num-cell">7</td>
+            <td class="name-cell">渡邉　俊介</td>
+            <td class="pos-cell"><span class="pos-badge pos-MF">MF</span></td>
+            <td class="birth-cell">1991/12/31</td>
+            <td class="age-cell">34</td>
+          </tr>
+          <tr data-pos="MF">
+            <td class="num-cell">8</td>
+            <td class="name-cell">夏堀　裕之</td>
+            <td class="pos-cell"><span class="pos-badge pos-MF">MF</span></td>
+            <td class="birth-cell">1986/6/19</td>
+            <td class="age-cell">39</td>
+          </tr>
+          <tr data-pos="FW">
+            <td class="num-cell">9</td>
+            <td class="name-cell">松本　尚也</td>
+            <td class="pos-cell"><span class="pos-badge pos-FW">FW</span></td>
+            <td class="birth-cell">1985/1/10</td>
+            <td class="age-cell">41</td>
+          </tr>
+          <tr data-pos="FW">
+            <td class="num-cell">10</td>
+            <td class="name-cell">裵　珉奕</td>
+            <td class="pos-cell"><span class="pos-badge pos-FW">FW</span></td>
+            <td class="birth-cell">1987/4/16</td>
+            <td class="age-cell">39</td>
+          </tr>
+          <tr data-pos="FW">
+            <td class="num-cell">11</td>
+            <td class="name-cell">下村　隼人</td>
+            <td class="pos-cell"><span class="pos-badge pos-FW">FW</span></td>
+            <td class="birth-cell">1977/8/1</td>
+            <td class="age-cell">48</td>
+          </tr>
+          <tr data-pos="MF">
+            <td class="num-cell">13</td>
+            <td class="name-cell">渡辺　淳揮</td>
+            <td class="pos-cell"><span class="pos-badge pos-MF">MF</span></td>
+            <td class="birth-cell">1996/12/4</td>
+            <td class="age-cell">29</td>
+          </tr>
+          <tr data-pos="FW">
+            <td class="num-cell">14</td>
+            <td class="name-cell">富田　昊輝</td>
+            <td class="pos-cell"><span class="pos-badge pos-FW">FW</span></td>
+            <td class="birth-cell">2006/7/8</td>
+            <td class="age-cell">19</td>
+          </tr>
+          <tr data-pos="FW">
+            <td class="num-cell">15</td>
+            <td class="name-cell">朝山　敢太</td>
+            <td class="pos-cell"><span class="pos-badge pos-FW">FW</span></td>
+            <td class="birth-cell">2006/5/22</td>
+            <td class="age-cell">19</td>
+          </tr>
+          <tr data-pos="FW">
+            <td class="num-cell">16</td>
+            <td class="name-cell">浦崎　栄琉</td>
+            <td class="pos-cell"><span class="pos-badge pos-FW">FW</span></td>
+            <td class="birth-cell">2005/5/27</td>
+            <td class="age-cell">20</td>
+          </tr>
+          <tr data-pos="MF">
+            <td class="num-cell">17</td>
+            <td class="name-cell">河本　海人</td>
+            <td class="pos-cell"><span class="pos-badge pos-MF">MF</span></td>
+            <td class="birth-cell">2000/7/22</td>
+            <td class="age-cell">25</td>
+          </tr>
+          <tr data-pos="MF">
+            <td class="num-cell">18</td>
+            <td class="name-cell">中山　雄太</td>
+            <td class="pos-cell"><span class="pos-badge pos-MF">MF</span></td>
+            <td class="birth-cell">2007/4/27</td>
+            <td class="age-cell">18</td>
+          </tr>
+          <tr data-pos="DF">
+            <td class="num-cell">20</td>
+            <td class="name-cell">小篠　直士</td>
+            <td class="pos-cell"><span class="pos-badge pos-DF">DF</span></td>
+            <td class="birth-cell">2006/10/17</td>
+            <td class="age-cell">19</td>
+          </tr>
+          <tr data-pos="MF">
+            <td class="num-cell">21</td>
+            <td class="name-cell">下村　颯星</td>
+            <td class="pos-cell"><span class="pos-badge pos-MF">MF</span></td>
+            <td class="birth-cell">2005/12/28</td>
+            <td class="age-cell">20</td>
+          </tr>
+          <tr data-pos="DF">
+            <td class="num-cell">22</td>
+            <td class="name-cell">井戸　翔大</td>
+            <td class="pos-cell"><span class="pos-badge pos-DF">DF</span></td>
+            <td class="birth-cell">1984/12/31</td>
+            <td class="age-cell">41</td>
+          </tr>
+          <tr data-pos="DF">
+            <td class="num-cell">23</td>
+            <td class="name-cell">渡辺　裕揮</td>
+            <td class="pos-cell"><span class="pos-badge pos-DF">DF</span></td>
+            <td class="birth-cell">1998/12/12</td>
+            <td class="age-cell">27</td>
+          </tr>
+          <tr data-pos="GK">
+            <td class="num-cell">32</td>
+            <td class="name-cell">有川　大翔</td>
+            <td class="pos-cell"><span class="pos-badge pos-GK">GK</span></td>
+            <td class="birth-cell">2006/8/10</td>
+            <td class="age-cell">19</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding:60px 24px; background:#F5C400;">
+  <div class="section-inner" style="text-align:center;">
+    <h2 class="section-title" style="color:#1a1a1a;">仲間になりませんか？</h2>
+    <p style="color:rgba(0,0,0,0.8); margin:16px auto 32px; max-width:500px; line-height:1.8;">熱い気持ちを持った選手を募集しています。<br>年齢・経験不問。まずはお気軽にお問い合わせください！</p>
+    <a href="https://forms.gle/NVb9DyiLFACqmmQD9" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#1a1a1a; color:#fff; padding:14px 36px; border-radius:25px; font-weight:700; font-size:0.95rem; text-decoration:none; transition:background 0.3s;"><i class="fas fa-paper-plane"></i> お問い合わせ</a>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo-area">
+        <div class="logo"><div class="logo-icon"><img src="images/emblem.png" alt="DANGE UNITED エンブレム"></div><div class="logo-text"><span class="logo-name">DANGE UNITED</span><span class="logo-sub">Football Club</span></div></div>
+        <p class="footer-tagline">情熱を持って、全力で戦う。<br>DANGE UNITED トップチーム。</p>
+      </div>
+      <div><p class="footer-col-title">MENU</p><ul class="footer-links"><li><a href="index.html">ホーム</a></li><li><a href="topteam-about.html">TOPチーム紹介</a></li><li><a href="topteam-players.html">TOPチーム選手紹介</a></li><li><a href="about.html">O-40チーム紹介</a></li><li><a href="players.html">O-40選手紹介</a></li></ul></div>
+      <div><p class="footer-col-title">JOIN US</p><ul class="footer-links"><li><a href="sponsor.html">パートナー</a></li></ul></div>
+      <div><p class="footer-col-title">CONTACT</p><ul class="footer-links"><li><a href="https://forms.gle/4TWmZNjqBxyBbL576" target="_blank" rel="noopener"><i class="fas fa-paper-plane" style="width:16px; margin-right:6px;"></i>お問い合わせフォーム</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 DANGE UNITED. All Rights Reserved.</p><div style="display:flex; gap:16px;"><a href="#">プライバシーポリシー</a></div></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // ポジションフィルター
+  const filters = document.querySelectorAll('.pos-filter');
+  const rows = document.querySelectorAll('#playerTable tbody tr');
+
+  filters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const pos = btn.dataset.pos;
+      rows.forEach(row => {
+        row.style.display = (pos === 'ALL' || row.dataset.pos === pos) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

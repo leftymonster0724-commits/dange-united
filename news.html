@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ニュース | DANGE UNITED O-40</title>
+  <meta name="description" content="DANGE UNITED O-40の最新ニュース・お知らせ一覧です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo"><div class="logo-icon"><img src="images/emblem.png" alt="DANGE UNITED エンブレム"></div><div class="logo-text"><span class="logo-name">DANGE UNITED</span><span class="logo-sub">O-40 Football Club</span></div></a>
+    <nav class="nav-pc">
+      <a href="index.html">HOME</a><a href="topteam-about.html">TOP ABOUT</a><a href="topteam-players.html">TOP PLAYERS</a><a href="about.html">O-40 ABOUT</a><a href="players.html">O-40 PLAYERS</a><a href="sponsor.html">PARTNER</a>
+    </nav>
+    <button class="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="nav-mobile">
+  <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+  <a href="about.html"><i class="fas fa-users"></i> O-40 ABOUT チーム紹介</a>
+  <a href="players.html"><i class="fas fa-user"></i> O-40 PLAYERS 選手紹介</a>
+  <a href="topteam-about.html"><i class="fas fa-shield-alt"></i> TOP TEAM ABOUT</a>
+  <a href="topteam-players.html"><i class="fas fa-futbol"></i> TOP TEAM PLAYERS</a>
+  <a href="sponsor.html"><i class="fas fa-handshake"></i> PARTNER パートナー</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> CONTACT お問い合わせ</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-bg" style="background-image:url('images/photo10.jpg');"></div>
+  <div class="page-header-inner">
+    <span class="page-header-tag">NEWS</span>
+    <h1 class="page-header-title">LATEST <span>NEWS</span></h1>
+    <nav class="breadcrumb"><a href="index.html">HOME</a><span class="sep">›</span><span class="current">ニュース</span></nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+
+    <!-- カテゴリフィルター -->
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px;" class="fade-in">
+      <button class="filter-btn active" data-filter="all"
+        style="padding:8px 20px; border-radius:20px; border:2px solid var(--red); background:var(--red); color:var(--white); font-weight:700; font-size:0.82rem; cursor:pointer; transition:var(--transition);">
+        すべて
+      </button>
+      <button class="filter-btn" data-filter="match"
+        style="padding:8px 20px; border-radius:20px; border:2px solid #0066CC; background:transparent; color:#0066CC; font-weight:700; font-size:0.82rem; cursor:pointer; transition:var(--transition);">
+        試合レポート
+      </button>
+      <button class="filter-btn" data-filter="recruit"
+        style="padding:8px 20px; border-radius:20px; border:2px solid #009933; background:transparent; color:#009933; font-weight:700; font-size:0.82rem; cursor:pointer; transition:var(--transition);">
+        メンバー募集
+      </button>
+      <button class="filter-btn" data-filter="sponsor"
+        style="padding:8px 20px; border-radius:20px; border:2px solid #FF9900; background:transparent; color:#CC7700; font-weight:700; font-size:0.82rem; cursor:pointer; transition:var(--transition);">
+        スポンサー
+      </button>
+      <button class="filter-btn" data-filter="info"
+        style="padding:8px 20px; border-radius:20px; border:2px solid #666; background:transparent; color:#666; font-weight:700; font-size:0.82rem; cursor:pointer; transition:var(--transition);">
+        お知らせ
+      </button>
+    </div>
+
+    <!-- ニュース一覧 -->
+    <div id="newsGrid" style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px;" class="news-grid-responsive">
+
+      <div class="news-card fade-in" data-category="match">
+        <div class="news-card-img-placeholder">🏆</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag match">試合</span><span class="news-date">2025.03.16</span></div>
+          <p class="news-card-title">春季リーグ第3節 FC SUNRISE に 3-1 で勝利！3連勝で首位を快走</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">前半から主導権を握り、小林選手の2ゴール、渡辺選手の1ゴールで快勝。守備陣も安定したパフォーマンスで無失点に近い内容でした。</p>
+        </div>
+      </div>
+
+      <div class="news-card fade-in" data-category="match">
+        <div class="news-card-img-placeholder">⚽</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag match">試合</span><span class="news-date">2025.03.09</span></div>
+          <p class="news-card-title">春季リーグ第2節 BLAZE FC と 2-2 で引き分け。勝点1を取得</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">後半追いかける展開になりましたが、途中出場の加藤選手が値千金の同点ゴールで引き分けに持ち込みました。</p>
+        </div>
+      </div>
+
+      <div class="news-card fade-in" data-category="match">
+        <div class="news-card-img-placeholder">🔥</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag match">試合</span><span class="news-date">2025.03.02</span></div>
+          <p class="news-card-title">春季リーグ開幕！第1節 STORM 45 に 4-0 で大勝スタート</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">2025年春季リーグが開幕。小林選手の2ゴールを含む4得点0失点で最高のスタートを切りました。</p>
+        </div>
+      </div>
+
+      <div class="news-card fade-in" data-category="recruit">
+        <div class="news-card-img-placeholder">🔰</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag recruit">募集</span><span class="news-date">2025.03.01</span></div>
+          <p class="news-card-title">2025年度 新メンバー募集開始！35歳以上の方も大歓迎です</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">2025年度の新メンバー募集を開始しました。ポジション・経験年数問わず歓迎します。まずはお気軽にお問い合わせください。</p>
+        </div>
+      </div>
+
+      <div class="news-card fade-in" data-category="sponsor">
+        <div class="news-card-img-placeholder">🤝</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag sponsor">パートナー</span><span class="news-date">2025.02.20</span></div>
+          <p class="news-card-title">株式会社〇〇様がトップパートナーとして就任されました</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">2025年度より株式会社〇〇様にトップパートナーとしてご支援いただくことになりました。誠にありがとうございます。</p>
+        </div>
+      </div>
+
+      <div class="news-card fade-in" data-category="info">
+        <div class="news-card-img-placeholder">📅</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag info">お知らせ</span><span class="news-date">2025.02.10</span></div>
+          <p class="news-card-title">2025年 春季リーグの日程が確定しました</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">2025年春季リーグの全日程が確定しました。詳細は試合日程ページをご確認ください。</p>
+        </div>
+      </div>
+
+      <div class="news-card fade-in" data-category="match">
+        <div class="news-card-img-placeholder">🥈</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag match">試合</span><span class="news-date">2024.12.08</span></div>
+          <p class="news-card-title">2024年秋季大会 決勝で惜敗。チーム史上初の準優勝！</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">決勝戦では PHOENIX FC に 1-2 で惜しくも敗れましたが、チーム史上初の決勝進出・準優勝という快挙を成し遂げました。</p>
+        </div>
+      </div>
+
+      <div class="news-card fade-in" data-category="info">
+        <div class="news-card-img-placeholder">🎉</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag info">お知らせ</span><span class="news-date">2024.12.15</span></div>
+          <p class="news-card-title">2024年度 納会を開催しました！ご参加いただいた皆様ありがとうございました</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">2024年度の納会を12月15日(日)に開催。メンバー・ご家族合わせて約40名が参加し、盛大な納会となりました。</p>
+        </div>
+      </div>
+
+      <div class="news-card fade-in" data-category="recruit">
+        <div class="news-card-img-placeholder">👋</div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-tag recruit">募集</span><span class="news-date">2024.11.01</span></div>
+          <p class="news-card-title">GKポジション 追加募集中！経験者優遇です</p>
+          <p style="font-size:0.82rem; color:#666; margin-top:8px; line-height:1.6;">現在チームでは GK ポジションのメンバーを追加募集しています。GK経験のある方、ぜひご連絡ください。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:48px;" class="fade-in">
+      <p style="color:#888; font-size:0.88rem;">過去のニュースはお問い合わせフォームよりご確認ください</p>
+    </div>
+
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo-area"><div class="logo"><div class="logo-icon"><img src="images/emblem.png" alt="DANGE UNITED エンブレム"></div><div class="logo-text"><span class="logo-name">DANGE UNITED</span><span class="logo-sub">O-40 Football Club</span></div></div><p class="footer-tagline">情熱で戦う。<br>社会人サッカーチーム。</p></div>
+      <div><p class="footer-col-title">MENU</p><ul class="footer-links"><li><a href="index.html">ホーム</a></li><li><a href="topteam-about.html">TOPチーム紹介</a></li><li><a href="topteam-players.html">TOPチーム選手紹介</a></li><li><a href="about.html">O-40チーム紹介</a></li><li><a href="players.html">O-40選手紹介</a></li></ul></div>
+      <div><p class="footer-col-title">JOIN US</p><ul class="footer-links"><li><a href="sponsor.html">パートナー</a></li></ul></div>
+      <div><p class="footer-col-title">CONTACT</p><ul class="footer-links"><li><a href="https://forms.gle/4TWmZNjqBxyBbL576" target="_blank" rel="noopener"><i class="fas fa-paper-plane" style="width:16px; margin-right:6px;"></i>お問い合わせフォーム</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 DANGE UNITED. All Rights Reserved.</p><div style="display:flex; gap:16px;"><a href="#">プライバシーポリシー</a></div></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // カテゴリフィルター
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const newsCards = document.querySelectorAll('#newsGrid .news-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.style.background = 'transparent';
+        b.style.color = b.style.borderColor.replace('2px solid ','');
+      });
+      const filter = btn.dataset.filter;
+      // アクティブスタイル
+      btn.style.background = btn.style.borderColor;
+      btn.style.color = 'white';
+
+      newsCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

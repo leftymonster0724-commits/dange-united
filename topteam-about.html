@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP TEAM チーム紹介 | DANGE UNITED</title>
+  <meta name="description" content="DANGE UNITED トップチームの紹介ページです。チームの想い・理念・活動内容をご紹介します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== TOP TEAM カラーテーマ（黄色） ===== */
+    :root {
+      --top-yellow: #F5C400;
+      --top-yellow-dark: #D4A800;
+      --top-yellow-light: #FFD740;
+      --top-maroon: #7B1C1C;
+    }
+
+    /* ページヘッダー */
+    .topteam-header .page-header-tag {
+      background: var(--top-yellow);
+      color: #1a1a1a;
+    }
+    .topteam-header .page-header-title span {
+      color: var(--top-yellow);
+    }
+
+    /* section-tag */
+    .top-tag {
+      display: inline-block;
+      background: var(--top-yellow);
+      color: #1a1a1a;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 14px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    /* divider */
+    .top-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--top-yellow);
+      border-radius: 2px;
+      margin: 14px 0 24px 0;
+    }
+    .top-divider.center {
+      margin: 14px auto 24px;
+    }
+
+    /* セクションタイトルのspan（黄色） */
+    .top-title span {
+      color: var(--top-yellow) !important;
+    }
+
+    /* border-left アクセント */
+    .top-border-card {
+      border-left: 4px solid var(--top-yellow) !important;
+    }
+
+    /* テーブルの見出し */
+    .top-th {
+      color: var(--top-yellow-dark) !important;
+    }
+
+    /* PHILOSOPHY中央カード */
+    .top-center-card {
+      background: var(--top-yellow) !important;
+    }
+    .top-center-card h3 {
+      color: #1a1a1a !important;
+    }
+    .top-center-card p {
+      color: rgba(0,0,0,0.75) !important;
+    }
+
+    /* サイドカードのh3 */
+    .top-side-h3 {
+      color: var(--top-yellow-light) !important;
+    }
+
+    /* CTAセクション */
+    .top-cta {
+      background: var(--top-yellow) !important;
+    }
+    .top-cta h2 {
+      color: #1a1a1a !important;
+    }
+    .top-cta p {
+      color: rgba(0,0,0,0.8) !important;
+    }
+    .top-cta .btn-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .top-cta .btn-top:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    /* チームカラースウォッチ */
+    .color-swatch {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><img src="images/emblem.png" alt="DANGE UNITED エンブレム"></div>
+      <div class="logo-text">
+        <span class="logo-name">DANGE UNITED</span>
+        <span class="logo-sub">Football Club</span>
+      </div>
+    </a>
+    <nav class="nav-pc">
+      <a href="index.html">HOME</a>
+      <a href="topteam-about.html" style="color:var(--top-yellow, #F5C400);">TOP ABOUT</a>
+      <a href="topteam-players.html">TOP PLAYERS</a>
+      <a href="about.html">O-40 ABOUT</a>
+      <a href="players.html">O-40 PLAYERS</a>
+      <a href="sponsor.html">PARTNER</a>
+    </nav>
+    <button class="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="nav-mobile">
+  <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+  <a href="about.html"><i class="fas fa-users"></i> O-40 ABOUT</a>
+  <a href="players.html"><i class="fas fa-user"></i> O-40 PLAYERS</a>
+  <a href="topteam-about.html" style="color:#F5C400;"><i class="fas fa-shield-alt"></i> TOP TEAM ABOUT</a>
+  <a href="topteam-players.html"><i class="fas fa-futbol"></i> TOP TEAM PLAYERS</a>
+  <a href="sponsor.html"><i class="fas fa-handshake"></i> PARTNER パートナー</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> CONTACT お問い合わせ</a>
+</nav>
+
+<!-- ページヘッダー -->
+<div class="page-header topteam-header">
+  <div class="page-header-bg" style="background-image:url('images/topteam-photo.jpg');"></div>
+  <div class="page-header-inner">
+    <span class="page-header-tag" style="background:var(--top-yellow, #F5C400); color:#1a1a1a;">TOP TEAM</span>
+    <h1 class="page-header-title">TEAM <span style="color:#F5C400;">ABOUT</span></h1>
+    <nav class="breadcrumb">
+      <a href="index.html">HOME</a>
+      <span class="sep">›</span>
+      <span class="current">TOP TEAM チーム紹介</span>
+    </nav>
+  </div>
+</div>
+
+<!-- チーム概要 -->
+<section class="section">
+  <div class="section-inner">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;" class="grid-2col fade-in">
+      <div>
+        <span class="top-tag">OUR STORY</span>
+        <h2 class="section-title top-title" style="text-align:left; margin-top:12px;">私たちについて</h2>
+        <div class="top-divider"></div>
+        <p style="line-height:1.9; color:#444; margin-bottom:16px;">
+          <strong>DANGE UNITED トップチーム</strong>は、「本気でサッカーと向き合いたい」という熱い気持ちを持った選手たちが集まったチームです。
+        </p>
+        <p style="line-height:1.9; color:#444; margin-bottom:16px;">
+          年齢・経験に関係なく、勝利への渇望と仲間への敬意を胸に、毎試合全力で戦い抜きます。
+          ピッチに立つ限り、妥協は一切なし。それがDANGE UNITEDトップチームのスタイルです。
+        </p>
+        <p style="line-height:1.9; color:#444; margin-bottom:16px;">
+          勝利の瞬間を仲間と分かち合うために、今日も練習を重ね、明日の試合に備える。
+          熱い気持ちを持ち続ける限り、私たちは走り続けます。
+        </p>
+        <p style="line-height:1.9; color:#444;">
+          モットーは「情熱を持って、全力で戦う」。
+        </p>
+      </div>
+      <div style="border-radius:10px; overflow:hidden; box-shadow:var(--shadow-lg);">
+        <img src="images/topteam-photo.jpg" alt="トップチーム写真" style="width:100%; height:360px; object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- クラブ情報 -->
+<section class="section" style="background:var(--gray-light); padding-top:0;">
+  <div class="section-inner">
+    <div class="section-header fade-in" style="padding-top:90px;">
+      <span class="top-tag">CLUB INFO</span>
+      <h2 class="section-title top-title">クラブ <span>基本情報</span></h2>
+      <div class="top-divider center"></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(2,1fr); gap:20px; max-width:900px; margin:0 auto;" class="club-info-grid fade-in">
+      <div class="top-border-card" style="background:var(--white); border-radius:8px; padding:28px 32px; box-shadow:var(--shadow);">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--gray-border);">
+            <th class="top-th" style="padding:12px 0; text-align:left; font-size:0.8rem; letter-spacing:1px; width:40%; font-weight:700;">チーム名</th>
+            <td style="padding:12px 0; font-size:0.92rem;">DANGE UNITED トップチーム</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-border);">
+            <th class="top-th" style="padding:12px 0; text-align:left; font-size:0.8rem; letter-spacing:1px; font-weight:700;">設立年</th>
+            <td style="padding:12px 0; font-size:0.92rem;">2022年</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-border);">
+            <th class="top-th" style="padding:12px 0; text-align:left; font-size:0.8rem; letter-spacing:1px; font-weight:700;">チームカラー</th>
+            <td style="padding:12px 0; font-size:0.92rem;">
+              <span class="color-swatch" style="background:#F5C400;"></span>黄色 ／
+              <span class="color-swatch" style="background:#ffffff; border:1px solid #ccc; margin-left:4px;"></span>白
+            </td>
+          </tr>
+          <tr>
+            <th class="top-th" style="padding:12px 0; text-align:left; font-size:0.8rem; letter-spacing:1px; font-weight:700;">所属リーグ</th>
+            <td style="padding:12px 0; font-size:0.92rem;">新日本スポーツ連盟<br>大阪府サッカー協議会</td>
+          </tr>
+        </table>
+      </div>
+      <div class="top-border-card" style="background:var(--white); border-radius:8px; padding:28px 32px; box-shadow:var(--shadow);">
+        <table style="width:100%; border-collapse:collapse;">
+          <tr style="border-bottom:1px solid var(--gray-border);">
+            <th class="top-th" style="padding:12px 0; text-align:left; font-size:0.8rem; letter-spacing:1px; width:40%; font-weight:700;">参加資格</th>
+            <td style="padding:12px 0; font-size:0.92rem;">年齢不問・経験者歓迎</td>
+          </tr>
+          <tr>
+            <th class="top-th" style="padding:12px 0; text-align:left; font-size:0.8rem; letter-spacing:1px; font-weight:700;">在籍メンバー</th>
+            <td style="padding:12px 0; font-size:0.92rem;">21名（2026年6月現在）</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- チーム理念 -->
+<section class="section section-dark">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="top-tag">PHILOSOPHY</span>
+      <h2 class="section-title" style="color:var(--white);">TEAM <span style="color:#F5C400;">PHILOSOPHY</span></h2>
+      <div class="top-divider center"></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:28px;" class="grid-3col fade-in">
+      <div style="text-align:center; padding:36px 24px; border:1px solid rgba(255,255,255,0.1); border-radius:8px;">
+        <div style="font-size:3rem; margin-bottom:18px;">🔥</div>
+        <h3 class="top-side-h3" style="font-size:1.2rem; margin-bottom:12px; font-weight:700;">PASSION</h3>
+        <p style="color:rgba(255,255,255,0.7); font-size:0.88rem; line-height:1.8;">熱い気持ちを持ってピッチに立つ。年齢・経験を超えた情熱が、チームを動かす原動力となる。</p>
+      </div>
+      <div class="top-center-card" style="text-align:center; padding:36px 24px; border-radius:8px;">
+        <div style="font-size:3rem; margin-bottom:18px;">🤝</div>
+        <h3 style="font-size:1.2rem; color:#1a1a1a; margin-bottom:12px; font-weight:700;">UNITY</h3>
+        <p style="color:rgba(0,0,0,0.75); font-size:0.88rem; line-height:1.8;">仲間を信じ、仲間のために戦う。一人ひとりの力がひとつになったとき、最大の力が生まれる。</p>
+      </div>
+      <div style="text-align:center; padding:36px 24px; border:1px solid rgba(255,255,255,0.1); border-radius:8px;">
+        <div style="font-size:3rem; margin-bottom:18px;">🏆</div>
+        <h3 class="top-side-h3" style="font-size:1.2rem; margin-bottom:12px; font-weight:700;">VICTORY</h3>
+        <p style="color:rgba(255,255,255,0.7); font-size:0.88rem; line-height:1.8;">勝利を目指して妥協しない。常に上を向き、全力でゴールを奪いにいく。それがトップチームの誇り。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 活動内容 -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <span class="top-tag">ACTIVITY</span>
+      <h2 class="section-title top-title">活動 <span>内容</span></h2>
+      <div class="top-divider center"></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(2,1fr); gap:24px; max-width:900px; margin:0 auto;" class="activity-grid fade-in">
+      <div style="display:flex; gap:16px; background:var(--gray-light); padding:24px; border-radius:8px; border-left:3px solid #F5C400;">
+        <div style="font-size:2.5rem; flex-shrink:0;">⚽</div>
+        <div>
+          <h3 style="font-weight:700; margin-bottom:6px;">月2回〜3回　試合orトレーニング</h3>
+          <p style="font-size:0.88rem; color:#555; line-height:1.7;">戦術練習・シュート練習・紅白戦など実戦を意識した濃密な内容で取り組んでいます。</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:16px; background:var(--gray-light); padding:24px; border-radius:8px; border-left:3px solid #F5C400;">
+        <div style="font-size:2.5rem; flex-shrink:0;">🏟️</div>
+        <div>
+          <h3 style="font-weight:700; margin-bottom:6px;">リーグ・大会参戦</h3>
+          <p style="font-size:0.88rem; color:#555; line-height:1.7;">新日本スポーツ連盟のリーグへ参戦。カップ戦・招待試合にも積極的に参加しています。</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:16px; background:var(--gray-light); padding:24px; border-radius:8px; border-left:3px solid #F5C400;">
+        <div style="font-size:2.5rem; flex-shrink:0;">🎉</div>
+        <div>
+          <h3 style="font-weight:700; margin-bottom:6px;">チームイベント</h3>
+          <p style="font-size:0.88rem; color:#555; line-height:1.7;">打ち上げ・納会など年間を通じてチームの絆を深めるイベントを開催しています。</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:16px; background:var(--gray-light); padding:24px; border-radius:8px; border-left:3px solid #F5C400;">
+        <div style="font-size:2.5rem; flex-shrink:0;">📈</div>
+        <div>
+          <h3 style="font-weight:700; margin-bottom:6px;">個人スキルアップ</h3>
+          <p style="font-size:0.88rem; color:#555; line-height:1.7;">個人技術・フィジカル強化を意識したトレーニングで選手個々の成長をサポートします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section top-cta" style="padding:60px 24px;">
+  <div class="section-inner" style="text-align:center;">
+    <h2 class="section-title" style="color:#1a1a1a;">仲間になりませんか？</h2>
+    <p style="color:rgba(0,0,0,0.8); margin:16px auto 32px; max-width:500px; line-height:1.8;">熱い気持ちを持った選手を募集しています。<br>年齢・経験不問。まずはお気軽にお問い合わせください！</p>
+    <a href="https://forms.gle/4TWmZNjqBxyBbL576" target="_blank" rel="noopener" class="btn-top"><i class="fas fa-paper-plane"></i> お問い合わせ</a>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo-area">
+        <div class="logo"><div class="logo-icon"><img src="images/emblem.png" alt="DANGE UNITED エンブレム"></div><div class="logo-text"><span class="logo-name">DANGE UNITED</span><span class="logo-sub">Football Club</span></div></div>
+        <p class="footer-tagline">情熱を持って、全力で戦う。<br>DANGE UNITED トップチーム。</p>
+      </div>
+      <div><p class="footer-col-title">MENU</p><ul class="footer-links"><li><a href="index.html">ホーム</a></li><li><a href="topteam-about.html">TOPチーム紹介</a></li><li><a href="topteam-players.html">TOPチーム選手紹介</a></li><li><a href="about.html">O-40チーム紹介</a></li><li><a href="players.html">O-40選手紹介</a></li></ul></div>
+      <div><p class="footer-col-title">JOIN US</p><ul class="footer-links"><li><a href="sponsor.html">パートナー</a></li></ul></div>
+      <div><p class="footer-col-title">CONTACT</p><ul class="footer-links"><li><a href="https://forms.gle/4TWmZNjqBxyBbL576" target="_blank" rel="noopener"><i class="fas fa-paper-plane" style="width:16px; margin-right:6px;"></i>お問い合わせフォーム</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 DANGE UNITED. All Rights Reserved.</p><div style="display:flex; gap:16px;"><a href="#">プライバシーポリシー</a></div></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

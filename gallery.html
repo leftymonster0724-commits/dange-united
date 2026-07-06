@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フォトギャラリー | DANGE UNITED</title>
+  <meta name="description" content="DANGE UNITED フォトギャラリー。試合・練習・チームの様子をご覧ください。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* ライトボックス */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      font-size: 2.5rem;
+      color: #fff;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .lightbox-prev, .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      background: rgba(255,255,255,0.1);
+      border: none;
+      padding: 12px 18px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .lightbox-prev { left: 16px; }
+    .lightbox-next { right: 16px; }
+    .lightbox-prev:hover, .lightbox-next:hover { background: rgba(255,255,255,0.25); }
+
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><img src="images/emblem.png" alt="DANGE UNITED エンブレム"></div>
+      <div class="logo-text">
+        <span class="logo-name">DANGE UNITED</span>
+        <span class="logo-sub">Football Club</span>
+      </div>
+    </a>
+    <nav class="nav-pc">
+      <a href="index.html">HOME</a>
+      <a href="topteam-about.html">TOP ABOUT</a>
+      <a href="topteam-players.html">TOP PLAYERS</a>
+      <a href="about.html">O-40 ABOUT</a>
+      <a href="players.html">O-40 PLAYERS</a>
+      <a href="sponsor.html">PARTNER</a>
+    </nav>
+    <button class="hamburger" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="nav-mobile">
+  <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+  <a href="topteam-about.html"><i class="fas fa-shield-alt"></i> TOP ABOUT</a>
+  <a href="topteam-players.html"><i class="fas fa-futbol"></i> TOP TEAM PLAYERS</a>
+  <a href="about.html"><i class="fas fa-users"></i> O-40 ABOUT</a>
+  <a href="players.html"><i class="fas fa-user"></i> O-40 PLAYERS</a>
+  <a href="sponsor.html"><i class="fas fa-handshake"></i> PARTNER パートナー</a>
+  <a href="contact.html"><i class="fas fa-envelope"></i> CONTACT お問い合わせ</a>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-bg" style="background-image:url('images/photo-new1.jpg');"></div>
+  <div class="page-header-inner">
+    <span class="page-header-tag">GALLERY</span>
+    <h1 class="page-header-title">PHOTO <span>GALLERY</span></h1>
+    <nav class="breadcrumb">
+      <a href="index.html">HOME</a>
+      <span class="sep">›</span>
+      <span class="current">フォトギャラリー</span>
+    </nav>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+
+    <!-- フォトアーカイブ -->
+    <div class="section-header fade-in">
+      <span class="section-tag">ARCHIVE</span>
+      <h2 class="section-title">PHOTO <span>ARCHIVE</span></h2>
+      <div class="divider"></div>
+      <p class="section-desc">これまでの試合・練習・チームの記録です。</p>
+    </div>
+    <div class="gallery-grid fade-in">
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="images/photo-top4.jpg" alt="TOPチーム集合写真">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="images/photo-new4.jpg" alt="チーム集合写真 2026" style="object-fit:contain; background:#111;">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="images/photo-top2.jpg" alt="チーム集合写真">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="images/photo-top1.jpg" alt="試合前ミーティング">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="images/photo7.jpg" alt="試合の様子">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="images/photo6.jpg" alt="チーム写真">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="images/photo5.jpg" alt="チーム練習">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(7)">
+        <img src="images/photo3.jpg" alt="試合アクション">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(8)">
+        <img src="images/photo1.jpg" alt="トレーニングの様子">
+      </div>
+      <div class="gallery-item" onclick="openLightbox(9)">
+        <img src="images/photo-top3.jpg" alt="O-40チーム集合写真" style="object-position:center center;">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo-area">
+        <div class="logo">
+          <div class="logo-icon"><img src="images/emblem.png" alt="DANGE UNITED エンブレム"></div>
+          <div class="logo-text"><span class="logo-name">DANGE UNITED</span><span class="logo-sub">Football Club</span></div>
+        </div>
+        <p class="footer-tagline">情熱で戦う。<br>社会人サッカーチーム。</p>
+      </div>
+      <div><p class="footer-col-title">MENU</p><ul class="footer-links"><li><a href="index.html">ホーム</a></li><li><a href="topteam-about.html">TOPチーム紹介</a></li><li><a href="topteam-players.html">TOPチーム選手紹介</a></li><li><a href="about.html">O-40チーム紹介</a></li><li><a href="players.html">O-40選手紹介</a></li></ul></div>
+      <div><p class="footer-col-title">JOIN US</p><ul class="footer-links"><li><a href="sponsor.html">パートナー</a></li></ul></div>
+      <div><p class="footer-col-title">CONTACT</p><ul class="footer-links"><li><a href="https://forms.gle/4TWmZNjqBxyBbL576" target="_blank" rel="noopener"><i class="fas fa-paper-plane" style="width:16px; margin-right:6px;"></i>お問い合わせフォーム</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 DANGE UNITED. All Rights Reserved.</p><div style="display:flex; gap:16px;"><a href="#">プライバシーポリシー</a></div></div>
+  </div>
+</footer>
+
+<!-- ライトボックス -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <button class="lightbox-prev" onclick="changePhoto(-1); event.stopPropagation();">&#8249;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" onclick="changePhoto(1); event.stopPropagation();">&#8250;</button>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  const photos = [
+    { src: "images/photo-new4.jpg",  alt: "チーム集合写真 2026" },
+    { src: "images/photo-top4.jpg",  alt: "TOPチーム集合写真" },
+    { src: "images/photo-top3.jpg",  alt: "O-40チーム集合写真" },
+    { src: "images/photo-top2.jpg",  alt: "チーム集合写真" },
+    { src: "images/photo-top1.jpg",  alt: "試合前ミーティング" },
+    { src: "images/photo7.jpg",      alt: "試合の様子" },
+    { src: "images/photo6.jpg",      alt: "チーム写真" },
+    { src: "images/photo5.jpg",      alt: "チーム練習" },
+    { src: "images/photo3.jpg",      alt: "試合アクション" },
+    { src: "images/photo1.jpg",      alt: "トレーニングの様子" },
+    { src: "images/photo-top3.jpg",  alt: "O-40チーム集合写真" },
+  ];
+
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById('lightboxImg').src = photos[index].src;
+    document.getElementById('lightboxImg').alt = photos[index].alt;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function changePhoto(dir) {
+    currentIndex = (currentIndex + dir + photos.length) % photos.length;
+    document.getElementById('lightboxImg').src = photos[currentIndex].src;
+    document.getElementById('lightboxImg').alt = photos[currentIndex].alt;
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (document.getElementById('lightbox').classList.contains('active')) {
+      if (e.key === 'ArrowLeft') changePhoto(-1);
+      if (e.key === 'ArrowRight') changePhoto(1);
+      if (e.key === 'Escape') closeLightbox({ target: document.getElementById('lightbox') });
+    }
+  });
+</script>
+</body>
+</html>
